@@ -19,3 +19,9 @@ jobs:
         run: |
           npm install remark-cli remark-preset-lint-consistent
           npx remark . --use remark-preset-lint-consistent --frail
+        
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v3.1.1
+        with:
+          name: remark-lint-report
+          path: public/
